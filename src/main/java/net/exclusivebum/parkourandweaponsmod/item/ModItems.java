@@ -13,8 +13,11 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, ParkourAndWeaponsMod.MOD_ID);
 
-    public static final RegistryObject<Item> STEEL = ITEMS.register("steel",
+    public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register("steel_ingot",
             () ->new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<Item> RUBBER = ITEMS.register("rubber",
+            () ->new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
 
     public static void register(IEventBus eventBus)
     {
