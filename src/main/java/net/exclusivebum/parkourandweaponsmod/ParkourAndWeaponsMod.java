@@ -1,6 +1,7 @@
-package net.exclusivebum.parkourmod;
+package net.exclusivebum.parkourandweaponsmod;
 
 import com.mojang.logging.LogUtils;
+import net.exclusivebum.parkourandweaponsmod.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -11,15 +12,17 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(ParkourMod.MOD_ID)
-public class ParkourMod
+@Mod(ParkourAndWeaponsMod.MOD_ID)
+public class ParkourAndWeaponsMod
 {
-    public static final String MOD_ID = "parkourmod";
+    public static final String MOD_ID = "parkourandweaponsmod";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public ParkourMod()
+    public ParkourAndWeaponsMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
